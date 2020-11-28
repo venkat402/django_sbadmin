@@ -12,3 +12,6 @@ media
 /.env
 /.vscode
 .idea/
+
+# static files and cache
+static/admin/

@@ -1,3 +1,21 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 
-# Create your views here.
+
+def error_404_view(request, exception):
+    data = {"name": "ThePythonDjango.com"}
+    return render(request, 'myapp/error_404.html', data)
+
+
+def home(request):
+    data = {"name": "ThePythonDjango.com"}
+    return render(request, 'index.html', data)
+
+
+def login(request, exception):
+    data = {"name": "ThePythonDjango.com"}
+    return render(request, 'myapp/error_404.html', data)
+
+
+def index(request):
+    return HttpResponse("Hello, world. You're at the Home page of Django sample project error 404.")
