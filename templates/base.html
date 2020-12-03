@@ -115,7 +115,7 @@
                         <a class="collapse-item" href="{% url 'forgot-password' %}">Forgot Password</a>
                         <div class="collapse-divider"></div>
                         <h6 class="collapse-header">Other Pages:</h6>
-                        <a class="collapse-item" href="{% url 'error_404' %}">404 Page</a>
+                        <a class="collapse-item" href="{% url 'error-404' %}">404 Page</a>
                         <a class="collapse-item" href="{% url 'blank' %}">Blank Page</a>
                     </div>
                 </div>
@@ -358,7 +358,7 @@
                                     Activity Log
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                <a class="dropdown-item" href="{% url 'logout' %}" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>
@@ -413,7 +413,7 @@
                     <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                     <div class="modal-footer">
                         <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                        <a class="btn btn-primary" href="{% url 'login' %}">Logout</a>
+                        <a class="btn btn-primary" href="{% url 'logout' %}">Logout</a>
                     </div>
                 </div>
             </div>
