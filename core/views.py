@@ -70,21 +70,25 @@ def error_404(request):
     return render(request, '404.html', data)
 
 
+@login_required
 def blank(request):
     data = {"name": "ThePythonDjango.com"}
     return render(request, 'blank.html', data)
 
 
+@login_required
 def buttons(request):
     data = {"name": "ThePythonDjango.com"}
     return render(request, 'buttons.html', data)
 
 
+@login_required
 def cards(request):
     data = {"name": "ThePythonDjango.com"}
     return render(request, 'cards.html', data)
 
 
+@login_required
 def charts(request):
     data = {"name": "ThePythonDjango.com"}
     return render(request, 'charts.html', data)
@@ -109,26 +113,31 @@ def user_login(request):
     return render(request, 'login.html', {'form': form, 'title': 'log in'})
 
 
+@login_required
 def tables(request):
     data = {"name": "ThePythonDjango.com"}
     return render(request, 'tables.html', data)
 
 
+@login_required
 def u_animation(request):
     data = {"name": "ThePythonDjango.com"}
     return render(request, 'utilities-animation.html', data)
 
 
+@login_required
 def u_border(request):
     data = {"name": "ThePythonDjango.com"}
     return render(request, 'utilities-border.html', data)
 
 
+@login_required
 def u_color(request):
     data = {"name": "ThePythonDjango.com"}
     return render(request, 'utilities-color.html', data)
 
 
+@login_required
 def u_other(request):
     data = {"name": "ThePythonDjango.com"}
     return render(request, 'utilities-other.html', data)
@@ -191,3 +200,27 @@ def password_reset_request(request):
     password_reset_form = PasswordResetForm()
     return render(request=request, template_name="forgot-password.html",
                   context={"password_reset_form": password_reset_form})
+
+
+@login_required
+def employee_form(request):
+    data = {"name": "ThePythonDjango.com"}
+    return render(request, 'forms/employee_form.html', data)
+
+
+@login_required
+def cards_form(request):
+    data = {"name": "ThePythonDjango.com"}
+    return render(request, 'forms/cards_form.html', data)
+
+
+@login_required
+def graphs_form(request):
+    data = {"name": "ThePythonDjango.com"}
+    return render(request, 'forms/graph_form.html', data)
+
+
+@login_required
+def settings_form(request):
+    data = {"name": "ThePythonDjango.com"}
+    return render(request, 'forms/settings_form.html', data)
