@@ -3,12 +3,15 @@ from django.http import HttpResponse
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
 from .forms import SignUpForm
+from .forms import EmployeeForm
 from django.contrib.sites.shortcuts import get_current_site
 from django.template.loader import render_to_string
 
 from django.contrib.auth.models import User
 from django.utils.encoding import force_text
 from django.utils.http import urlsafe_base64_decode
+
+from models import Employee
 from .tokens import account_activation_token
 from django.contrib.auth.forms import AuthenticationForm
 
@@ -204,8 +207,17 @@ def password_reset_request(request):
 
 @login_required
 def employee_form(request):
-    data = {"name": "ThePythonDjango.com"}
-    return render(request, 'forms/employee_form.html', data)
+    if request.method == "POST":
+        form = EmployeeForm(request.body)
+        form.save()
+        return HttpResponse(request);
+        p = Employee(name=name, phone_number=number, date_subscribed=datetime.now(), messages_received=0)
+        p.save()
+
+        return HttpResponse(request);
+    else:
+        data = {"name": "ThePythonDjango.com"}
+        return render(request, 'forms/employee_form.html', data)
 
 
 @login_required
